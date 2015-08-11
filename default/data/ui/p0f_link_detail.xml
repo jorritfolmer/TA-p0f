@@ -1,0 +1,33 @@
+<form>
+  <label>p0f link detail</label>
+  <fieldset submitButton="true">
+    <input type="text" token="p0f_link">
+      <prefix>"</prefix>
+      <suffix>"</suffix>
+    </input>
+    <input type="time" token="field1">
+      <label></label>
+      <default>
+        <earliest>-24h@h</earliest>
+        <latest>now</latest>
+      </default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <table>
+        <title>link by src_ip</title>
+        <search>
+          <query>|datamodel p0f mtu search |search root.mtu.p0f_link=$p0f_link$ |stats count, values(root.mtu.p0f_mtu) as mtu by root.src_ip |sort - count</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>

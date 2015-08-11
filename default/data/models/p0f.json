@@ -1,0 +1,1300 @@
+{
+    "modelName": "p0f",
+    "displayName": "p0f",
+    "description": "",
+    "objectSummary": {
+        "Event-Based": 9,
+        "Transaction-Based": 1,
+        "Search-Based": 0
+    },
+    "objects": [
+        {
+            "objectName": "root",
+            "displayName": "root",
+            "parentName": "BaseEvent",
+            "fields": [
+                {
+                    "fieldName": "_time",
+                    "owner": "BaseEvent",
+                    "type": "timestamp",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "_time",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "host",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "host",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "source",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "source",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "sourcetype",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "sourcetype",
+                    "comment": "",
+                    "fieldSearch": ""
+                }
+            ],
+            "calculations": [
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "mod",
+                            "owner": "root",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "mod",
+                            "comment": "",
+                            "fieldSearch": ""
+                        },
+                        {
+                            "fieldName": "src_ip",
+                            "owner": "root",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "src_ip",
+                            "comment": "",
+                            "fieldSearch": ""
+                        },
+                        {
+                            "fieldName": "src_port",
+                            "owner": "root",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "src_port",
+                            "comment": "",
+                            "fieldSearch": ""
+                        },
+                        {
+                            "fieldName": "dest_ip",
+                            "owner": "root",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "dest_ip",
+                            "comment": "",
+                            "fieldSearch": ""
+                        },
+                        {
+                            "fieldName": "dest_port",
+                            "owner": "root",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "dest_port",
+                            "comment": "",
+                            "fieldSearch": ""
+                        },
+                        {
+                            "fieldName": "status",
+                            "owner": "root",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "status",
+                            "comment": "",
+                            "fieldSearch": ""
+                        }
+                    ],
+                    "inputField": "_raw",
+                    "calculationID": "ur2d2dh4ghr",
+                    "owner": "root",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Rex",
+                    "expression": "\\smod=(?<mod>[^\\|]+)\\|cli=(?<src_ip>[^/]+)/(?<src_port>\\d+)\\|srv=(?<dest_ip>[^/]+)/(?<dest_port>\\d+)\\|subj=(?<status>\\w+)\\|"
+                }
+            ],
+            "constraints": [
+                {
+                    "search": "index=p0f sourcetype=p0f",
+                    "owner": "root"
+                }
+            ],
+            "lineage": "root"
+        },
+        {
+            "objectName": "mtu",
+            "displayName": "mtu",
+            "parentName": "root",
+            "fields": [
+                {
+                    "fieldName": "_time",
+                    "owner": "BaseEvent",
+                    "type": "timestamp",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "_time",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "host",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "host",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "source",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "source",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "sourcetype",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "sourcetype",
+                    "comment": "",
+                    "fieldSearch": ""
+                }
+            ],
+            "calculations": [
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "p0f_mtu",
+                            "owner": "root.mtu",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "p0f_mtu",
+                            "comment": "",
+                            "fieldSearch": ""
+                        },
+                        {
+                            "fieldName": "p0f_link",
+                            "owner": "root.mtu",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "p0f_link",
+                            "comment": "",
+                            "fieldSearch": ""
+                        }
+                    ],
+                    "inputField": "_raw",
+                    "calculationID": "y48w0qa56b",
+                    "owner": "root.mtu",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Rex",
+                    "expression": "link=(?<p0f_link>[^\\|]+)\\|raw_mtu=(?<p0f_mtu>\\d+)$"
+                }
+            ],
+            "constraints": [
+                {
+                    "search": "mod=mtu",
+                    "owner": "root.mtu"
+                }
+            ],
+            "lineage": "root.mtu"
+        },
+        {
+            "objectName": "syn",
+            "displayName": "syn",
+            "parentName": "root",
+            "fields": [
+                {
+                    "fieldName": "_time",
+                    "owner": "BaseEvent",
+                    "type": "timestamp",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "_time",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "host",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "host",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "source",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "source",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "sourcetype",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "sourcetype",
+                    "comment": "",
+                    "fieldSearch": ""
+                }
+            ],
+            "calculations": [
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "os",
+                            "owner": "root.syn",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "os",
+                            "comment": "",
+                            "fieldSearch": ""
+                        },
+                        {
+                            "fieldName": "p0f_dist",
+                            "owner": "root.syn",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "p0f_dist",
+                            "comment": "",
+                            "fieldSearch": ""
+                        },
+                        {
+                            "fieldName": "p0f_params",
+                            "owner": "root.syn",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "p0f_params",
+                            "comment": "",
+                            "fieldSearch": ""
+                        }
+                    ],
+                    "inputField": "_raw",
+                    "calculationID": "mqqpjecfo8a",
+                    "owner": "root.syn",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Rex",
+                    "expression": "\\|os=(?<os>[^\\|]+)\\|dist=(?<p0f_dist>\\d+)\\|params=(?<p0f_params>[^\\|]+)\\|"
+                }
+            ],
+            "constraints": [
+                {
+                    "search": "mod=syn",
+                    "owner": "root.syn"
+                }
+            ],
+            "lineage": "root.syn"
+        },
+        {
+            "objectName": "synack",
+            "displayName": "syn+ack",
+            "parentName": "root",
+            "fields": [
+                {
+                    "fieldName": "_time",
+                    "owner": "BaseEvent",
+                    "type": "timestamp",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "_time",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "host",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "host",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "source",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "source",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "sourcetype",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "sourcetype",
+                    "comment": "",
+                    "fieldSearch": ""
+                }
+            ],
+            "calculations": [
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "os",
+                            "owner": "root.synack",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "os",
+                            "comment": "",
+                            "fieldSearch": ""
+                        },
+                        {
+                            "fieldName": "p0f_dist",
+                            "owner": "root.synack",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "p0f_dist",
+                            "comment": "",
+                            "fieldSearch": ""
+                        },
+                        {
+                            "fieldName": "p0f_params",
+                            "owner": "root.synack",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "p0f_params",
+                            "comment": "",
+                            "fieldSearch": ""
+                        }
+                    ],
+                    "inputField": "_raw",
+                    "calculationID": "mzr9gl3bisg",
+                    "owner": "root.synack",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Rex",
+                    "expression": "\\|os=(?<os>[^\\|]+)\\|dist=(?<p0f_dist>\\d+)\\|params=(?<p0f_params>[^\\|]+)\\|"
+                }
+            ],
+            "constraints": [
+                {
+                    "search": "mod=\"syn+ack\"",
+                    "owner": "root.synack"
+                }
+            ],
+            "lineage": "root.synack"
+        },
+        {
+            "objectName": "uptime",
+            "displayName": "uptime",
+            "parentName": "root",
+            "fields": [
+                {
+                    "fieldName": "_time",
+                    "owner": "BaseEvent",
+                    "type": "timestamp",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "_time",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "host",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "host",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "source",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "source",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "sourcetype",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "sourcetype",
+                    "comment": "",
+                    "fieldSearch": ""
+                }
+            ],
+            "calculations": [
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "p0f_uptime",
+                            "owner": "root.uptime",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "p0f_uptime",
+                            "comment": "",
+                            "fieldSearch": ""
+                        },
+                        {
+                            "fieldName": "p0f_raw_freq",
+                            "owner": "root.uptime",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "p0f_raw_freq",
+                            "comment": "",
+                            "fieldSearch": ""
+                        }
+                    ],
+                    "inputField": "_raw",
+                    "calculationID": "n62v1l5noye",
+                    "owner": "root.uptime",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Rex",
+                    "expression": "\\|uptime=(?<p0f_uptime>[^\\|]+)\\|raw_freq=(?<p0f_raw_freq>\\d+)\\.\\d+ Hz$"
+                }
+            ],
+            "constraints": [
+                {
+                    "search": "mod=uptime",
+                    "owner": "root.uptime"
+                }
+            ],
+            "lineage": "root.uptime"
+        },
+        {
+            "objectName": "http_request",
+            "displayName": "http_request",
+            "parentName": "root",
+            "fields": [
+                {
+                    "fieldName": "_time",
+                    "owner": "BaseEvent",
+                    "type": "timestamp",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "_time",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "host",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "host",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "source",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "source",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "sourcetype",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "sourcetype",
+                    "comment": "",
+                    "fieldSearch": ""
+                }
+            ],
+            "calculations": [
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "vendor_product",
+                            "owner": "root.http_request",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "vendor_product",
+                            "comment": "",
+                            "fieldSearch": ""
+                        },
+                        {
+                            "fieldName": "p0f_lang",
+                            "owner": "root.http_request",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "p0f_lang",
+                            "comment": "",
+                            "fieldSearch": ""
+                        },
+                        {
+                            "fieldName": "p0f_params",
+                            "owner": "root.http_request",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "p0f_params",
+                            "comment": "",
+                            "fieldSearch": ""
+                        }
+                    ],
+                    "inputField": "_raw",
+                    "calculationID": "w3bwtewukb",
+                    "owner": "root.http_request",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Rex",
+                    "expression": "\\|app=(?<vendor_product>[^\\|]+)\\|lang=(?<p0f_lang>[^\\|]+)\\|params=(?<p0f_params>[^\\|]+)\\|"
+                }
+            ],
+            "constraints": [
+                {
+                    "search": "mod=\"http request\"",
+                    "owner": "root.http_request"
+                }
+            ],
+            "lineage": "root.http_request"
+        },
+        {
+            "objectName": "http_response",
+            "displayName": "http_response",
+            "parentName": "root",
+            "fields": [
+                {
+                    "fieldName": "_time",
+                    "owner": "BaseEvent",
+                    "type": "timestamp",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "_time",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "host",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "host",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "source",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "source",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "sourcetype",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "sourcetype",
+                    "comment": "",
+                    "fieldSearch": ""
+                }
+            ],
+            "calculations": [
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "vendor_product",
+                            "owner": "root.http_response",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "vendor_product",
+                            "comment": "",
+                            "fieldSearch": ""
+                        },
+                        {
+                            "fieldName": "p0f_lang",
+                            "owner": "root.http_response",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "p0f_lang",
+                            "comment": "",
+                            "fieldSearch": ""
+                        },
+                        {
+                            "fieldName": "p0f_params",
+                            "owner": "root.http_response",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "p0f_params",
+                            "comment": "",
+                            "fieldSearch": ""
+                        }
+                    ],
+                    "inputField": "_raw",
+                    "calculationID": "8djql33iuo",
+                    "owner": "root.http_response",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Rex",
+                    "expression": "\\|app=(?<vendor_product>[^\\|]+)\\|lang=(?<p0f_lang>[^\\|]+)\\|params=(?<p0f_params>[^\\|]+)\\|"
+                }
+            ],
+            "constraints": [
+                {
+                    "search": "mod=\"http response\"",
+                    "owner": "root.http_response"
+                }
+            ],
+            "lineage": "root.http_response"
+        },
+        {
+            "objectName": "host_change",
+            "displayName": "host_change",
+            "parentName": "root",
+            "fields": [
+                {
+                    "fieldName": "_time",
+                    "owner": "BaseEvent",
+                    "type": "timestamp",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "_time",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "host",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "host",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "source",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "source",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "sourcetype",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "sourcetype",
+                    "comment": "",
+                    "fieldSearch": ""
+                }
+            ],
+            "calculations": [
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "change_type",
+                            "owner": "root.host_change",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "change_type",
+                            "comment": "",
+                            "fieldSearch": ""
+                        }
+                    ],
+                    "inputField": "_raw",
+                    "calculationID": "ascrpzmdn4l",
+                    "owner": "root.host_change",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Rex",
+                    "expression": "\\|reason=(?<change_type>[^\\|]+)\\|"
+                }
+            ],
+            "constraints": [
+                {
+                    "search": "mod=\"host change\"",
+                    "owner": "root.host_change"
+                }
+            ],
+            "lineage": "root.host_change"
+        },
+        {
+            "objectName": "ip_sharing",
+            "displayName": "ip_sharing",
+            "parentName": "root",
+            "fields": [
+                {
+                    "fieldName": "_time",
+                    "owner": "BaseEvent",
+                    "type": "timestamp",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "_time",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "host",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "host",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "source",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "source",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "sourcetype",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "sourcetype",
+                    "comment": "",
+                    "fieldSearch": ""
+                }
+            ],
+            "calculations": [
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "change_type",
+                            "owner": "root.ip_sharing",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "change_type",
+                            "comment": "",
+                            "fieldSearch": ""
+                        }
+                    ],
+                    "inputField": "_raw",
+                    "calculationID": "trswbx6i4k",
+                    "owner": "root.ip_sharing",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Rex",
+                    "expression": "\\|reason=(?<change_type>[^\\|]+)\\|"
+                }
+            ],
+            "constraints": [
+                {
+                    "search": "mod=\"ip sharing\"",
+                    "owner": "root.ip_sharing"
+                }
+            ],
+            "lineage": "root.ip_sharing"
+        },
+        {
+            "objectName": "clients",
+            "displayName": "clients",
+            "parentName": "BaseTransaction",
+            "fields": [
+                {
+                    "fieldName": "mod",
+                    "owner": "clients",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "mod",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "src_ip",
+                    "owner": "clients",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "src_ip",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "src_port",
+                    "owner": "clients",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "src_port",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "dest_ip",
+                    "owner": "clients",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "dest_ip",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "dest_port",
+                    "owner": "clients",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "dest_port",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "status",
+                    "owner": "clients",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "status",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "p0f_mtu",
+                    "owner": "clients",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "p0f_mtu",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "p0f_link",
+                    "owner": "clients",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "p0f_link",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "os",
+                    "owner": "clients",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "os",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "p0f_dist",
+                    "owner": "clients",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "p0f_dist",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "p0f_params",
+                    "owner": "clients",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "p0f_params",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "p0f_uptime",
+                    "owner": "clients",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "p0f_uptime",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "p0f_raw_freq",
+                    "owner": "clients",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "p0f_raw_freq",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "vendor_product",
+                    "owner": "clients",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "vendor_product",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "p0f_lang",
+                    "owner": "clients",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "p0f_lang",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "change_type",
+                    "owner": "clients",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "change_type",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "_time",
+                    "owner": "BaseTransaction",
+                    "type": "timestamp",
+                    "required": true,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "_time",
+                    "comment": "",
+                    "fieldSearch": "_time=*"
+                },
+                {
+                    "fieldName": "eventcount",
+                    "owner": "BaseTransaction",
+                    "type": "number",
+                    "required": true,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "eventcount",
+                    "comment": "",
+                    "fieldSearch": "eventcount=*"
+                },
+                {
+                    "fieldName": "duration",
+                    "owner": "BaseTransaction",
+                    "type": "number",
+                    "required": true,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "duration",
+                    "comment": "",
+                    "fieldSearch": "duration=*"
+                },
+                {
+                    "fieldName": "host",
+                    "owner": "BaseTransaction",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "host",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "source",
+                    "owner": "BaseTransaction",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "source",
+                    "comment": "",
+                    "fieldSearch": ""
+                },
+                {
+                    "fieldName": "sourcetype",
+                    "owner": "BaseTransaction",
+                    "type": "string",
+                    "required": false,
+                    "multivalue": true,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "sourcetype",
+                    "comment": "",
+                    "fieldSearch": ""
+                }
+            ],
+            "calculations": [
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "os2",
+                            "owner": "clients",
+                            "type": "string",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "os2",
+                            "comment": "",
+                            "fieldSearch": ""
+                        }
+                    ],
+                    "calculationID": "2521wq0chz1",
+                    "owner": "clients",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Eval",
+                    "expression": "mvfilter(!match(os,\"^NULL$\"))"
+                }
+            ],
+            "constraints": [],
+            "lineage": "clients",
+            "groupByFields": [
+                "src_ip",
+                "src_port",
+                "dest_ip",
+                "dest_port",
+                "status"
+            ],
+            "objectsToGroup": [
+                "mtu",
+                "syn",
+                "uptime",
+                "http_request",
+                "host_change"
+            ],
+            "transactionMaxTimeSpan": "60s",
+            "transactionMaxPause": ""
+        }
+    ],
+    "objectNameList": [
+        "root",
+        "mtu",
+        "syn",
+        "synack",
+        "uptime",
+        "http_request",
+        "http_response",
+        "host_change",
+        "ip_sharing",
+        "clients"
+    ]
+}
